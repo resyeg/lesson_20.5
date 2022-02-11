@@ -3,9 +3,37 @@
 
 #include <iostream>
 
+enum class Results
+{
+    SUCCESS,
+    FAIL,
+    ERROR_WRITE,
+    ERROR_READ
+};
+
+enum class Another
+{
+    WORK,
+    SUCCESS
+};
+
+Results DoWork()
+{
+    return Results::SUCCESS;
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    Results workResults = DoWork();
+    if (workResults == Results::SUCCESS)
+    {
+
+    }
+    Another anotherRes = Another::WORK;
+    if (static_cast<int>(workResults) == static_cast<int>(anotherRes))
+    {
+
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
